@@ -1,11 +1,42 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends . -f Dockerfile
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -dp 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+docker logs --follow 774d488e758e26eb6bce248387c7485cae2164f5a59171a34f14090dc49bc7e4 > techtrends.log
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+ * Serving Flask app 'Techtrends' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[WARNING]:[werkzeug]:[2023-10-06 11:47:41,562]  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+[INFO]:[werkzeug]:[2023-10-06 11:47:41,563]  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+[INFO]:[werkzeug]:[2023-10-06 11:50:47,512] 172.17.0.1 - - [06/Oct/2023 11:50:47] "GET / HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:50:47,582] 172.17.0.1 - - [06/Oct/2023 11:50:47] "GET /static/css/main.css HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:50:47,950] 172.17.0.1 - - [06/Oct/2023 11:50:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[INFO]:[Techtrends]:[2023-10-06 11:51:44,917] - 127.0.0.1:7111 - An article is retrieved - 2020 CNCF Annual Report
+[INFO]:[werkzeug]:[2023-10-06 11:51:44,932] 172.17.0.1 - - [06/Oct/2023 11:51:44] "GET /1 HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:51:44,958] 172.17.0.1 - - [06/Oct/2023 11:51:44] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[INFO]:[Techtrends]:[2023-10-06 11:51:47,763] - 127.0.0.1:7111 - The About Us page is retrieved
+[INFO]:[werkzeug]:[2023-10-06 11:51:47,774] 172.17.0.1 - - [06/Oct/2023 11:51:47] "GET /about HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:51:47,794] 172.17.0.1 - - [06/Oct/2023 11:51:47] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[INFO]:[werkzeug]:[2023-10-06 11:51:49,532] 172.17.0.1 - - [06/Oct/2023 11:51:49] "GET /create HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:51:49,549] 172.17.0.1 - - [06/Oct/2023 11:51:49] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[INFO]:[Techtrends]:[2023-10-06 11:52:32,638] - 127.0.0.1:7111 - A new article is posted - AWS Elastic Search
+[DEBUG]:[Techtrends]:[2023-10-06 11:52:32,638] - 127.0.0.1:7111 - Current number of posts - 7
+[INFO]:[werkzeug]:[2023-10-06 11:52:32,639] 172.17.0.1 - - [06/Oct/2023 11:52:32] "[32mPOST /create HTTP/1.1[0m" 302 -
+[INFO]:[werkzeug]:[2023-10-06 11:52:32,649] 172.17.0.1 - - [06/Oct/2023 11:52:32] "GET / HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:52:32,676] 172.17.0.1 - - [06/Oct/2023 11:52:32] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+[INFO]:[werkzeug]:[2023-10-06 11:52:51,297] 172.17.0.1 - - [06/Oct/2023 11:52:51] "[33mGET /health HTTP/1.1[0m" 404 -
+[INFO]:[werkzeug]:[2023-10-06 11:53:22,162] 172.17.0.1 - - [06/Oct/2023 11:53:22] "GET /healthz HTTP/1.1" 200 -
+[DEBUG]:[Techtrends]:[2023-10-06 11:53:35,320] - 127.0.0.1:7111 - Metrics - { db_connection_count - 1 & post_count - 7 }
+[INFO]:[werkzeug]:[2023-10-06 11:53:35,320] 172.17.0.1 - - [06/Oct/2023 11:53:35] "GET /metrics HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:53:40,355] 172.17.0.1 - - [06/Oct/2023 11:53:40] "GET / HTTP/1.1" 200 -
+[INFO]:[werkzeug]:[2023-10-06 11:53:40,409] 172.17.0.1 - - [06/Oct/2023 11:53:40] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
